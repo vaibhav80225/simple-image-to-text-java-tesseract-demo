@@ -1,6 +1,6 @@
 # This is basic project for Reading image file and convert it into text
 
-For setup this project You need to download the tesserectt -cr language pack as per your Os - from here - https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md
+For setup this project You need to download the tesserectt-ocr language pack as per your Os - from here - https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md
 
 Once you download the package then set the url in application.properties file
 
