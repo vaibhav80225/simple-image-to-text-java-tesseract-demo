@@ -12,6 +12,7 @@ import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract1;
 import net.sourceforge.tess4j.TesseractException;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class ImageToTextConvertor {
+	
+	@Value("$tessarect.ocr.file.location")
+	private String tesserectOcrLocation;
 	
 	@GetMapping("/")
 	public String index(){
@@ -38,9 +42,9 @@ public class ImageToTextConvertor {
 	    ITesseract instance = new Tesseract1();// JNA Interface Mapping
 	    
 	    //download tesseract and install it according  to your  os
-	    //https://github.com/tesseract-ocr/tesseract/wiki/Downloads
+	    //https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md
 	    
-	    instance.setDatapath("C:\\Program Files (x86)\\Tesseract-OCR\\tessdata");
+	    instance.setDatapath(tesserectOcrLocation);
 	    instance.setLanguage("eng");
 	    
 	    String result = instance.doOCR(new File("image.jpg"));

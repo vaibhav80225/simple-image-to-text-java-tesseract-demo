@@ -1,0 +1,11 @@
+# This is basic project for Reading image file and convert it into text
+
+For setup this project You need to download the tesserectt -cr language pack as per your Os - from here - https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md
+
+Once you download the package then set the url in application.properties file
+
+#Use below command for running your application
+$ mvn spring-boot:run
+
+Your applicatoin up and running - go to browser localhost:8080 upload any image it will extract the text from it.
+
